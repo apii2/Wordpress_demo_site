@@ -1,9 +1,5 @@
 <?php
 
-/*
-
-*/
-
 function dd($value){
   echo "<pre>";
   var_dump($value);
@@ -12,11 +8,12 @@ function dd($value){
   die();
 }
 
+
 get_header();
 if(have_posts()):
   while(have_posts()):
     the_post();
-    get_template_part("templates-parts/page/content");
+    get_template_part("templates-parts/post/content");
   endwhile;
 endif;
 get_footer();
