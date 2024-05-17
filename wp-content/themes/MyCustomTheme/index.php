@@ -15,5 +15,11 @@ if(have_posts()):
     the_post();
     get_template_part("templates-parts/post/content");
   endwhile;
+
+  //Pagination of pages containing limited posts
+  echo paginate_links( [
+    'prev-text' => esc_html__('Prev','mytheme'),
+    'next-text' => esc_html__('Next','mytheme')
+  ] );
 endif;
 get_footer();
