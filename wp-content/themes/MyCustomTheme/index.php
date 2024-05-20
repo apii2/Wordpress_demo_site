@@ -10,6 +10,9 @@ function dd($value){
 
 
 get_header();
+
+get_search_form();
+
 if(have_posts()):
   while(have_posts()):
     the_post();
@@ -22,4 +25,5 @@ if(have_posts()):
     'next-text' => esc_html__('Next','mytheme')
   ] );
 endif;
+
 get_footer();

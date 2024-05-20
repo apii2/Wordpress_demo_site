@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template for displaying archive page
+Template for displaying search page
 */
 
 get_header();
@@ -11,15 +11,11 @@ get_header();
   <main>
     <?php
       if(have_posts()):
-        
-        //Archive title
-        the_archive_title("<h1>","</h1>");
-        the_archive_description("<div>","</div>");
-        
+
         //Display posts
         while(have_posts()):
           the_post();
-          get_template_part("templates-parts/post/content");
+          get_template_part("templates-parts/page/content","search");
         endwhile;
         
         //Pagination of pages containing limited posts
@@ -29,6 +25,7 @@ get_header();
         ] );
 
       else:
+        //If the search has no result
         get_template_part('templates-parts/page/content','none');
       endif;
     ?>

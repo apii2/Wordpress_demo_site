@@ -25,8 +25,8 @@ Template part for displaying the content of the page
 
       //Pagination
       wp_link_pages(array(
-        'before' => '<div class="page-links'. esc_html__('Pages:','mytheme'),
-        'after' => '</div>',
+        'before' => '<div>'. esc_html__('Pages:','mytheme'),
+        'after' => '</div>'
       ));
     ?>
   </p>

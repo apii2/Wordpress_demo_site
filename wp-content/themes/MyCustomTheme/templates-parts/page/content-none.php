@@ -16,9 +16,9 @@ Template for displaying the page that has no content
         '<p>'. wp_kses(
           __('Ready to publish your first post? <a href="%1$s">Get started here.</a>','mytheme'),
           array(
-            'a' => array(
-              'href' => array()
-            )
+            'a' => [
+              'href' => []
+            ]
           )
         ).'</p>',
         esc_url(admin_url('sidebar.php'))
