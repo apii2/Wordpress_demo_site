@@ -3,7 +3,6 @@
 /*
 Single page template
 */
-
 get_header();
 ?>
 

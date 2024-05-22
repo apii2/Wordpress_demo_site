@@ -1,6 +1,6 @@
 <?php
 /**
-* Mytheme functions and definations
+* Mytheme functions and definitions
 */
 
 if(! function_exists('mytheme_setup')):
@@ -82,7 +82,6 @@ if(! function_exists('mytheme_setup')):
     ]);
   }
 endif;
-
 add_action('after_setup_theme','mytheme_setup');
 
 /**
@@ -96,10 +95,10 @@ function mytheme_content_width(){
   //This variable is intended to be overruled from themes.
   $GLOBALS['content_width'] = apply_filters('mytheme_content_width',1170);
 }
-add_action('after_setup-theme','mytheme_content_width',0);
+add_action('after_setup_theme','mytheme_content_width',0);
 
 /**
- * Register Sidebar widget <area shape="
+ * Register Sidebar widget area
  * 
  * @since 1.0.0
  */
@@ -121,7 +120,12 @@ add_action('widgets_init','mytheme_sidebar_widgets_init');
  * Enqueue public scripts and styles.
  */
 function mytheme_public_scripts() {
-  
+  //Styles
+  wp_enqueue_style('default', get_template_directory_uri(). '/assets/css/default.css' , [], wp_rand(), 'all');
+  wp_enqueue_style('main', get_template_directory_uri(). '/assets/css/main.css' , [], wp_rand(), 'all');
+
+  //Scripts
+  wp_enqueue_script('main', get_template_directory_uri(). '/assets/js/main.js' , ['jquery'], wp_rand(), true);
 }
 add_action('wp_enqueue_scripts','mytheme_public_scripts');
 
@@ -131,4 +135,4 @@ add_action('wp_enqueue_scripts','mytheme_public_scripts');
 function mytheme_admin_scripts(){
 
 }
-add_action('admin_enwueue_scripts','mytheme_admin_scripts');
+add_action('admin_enqueue_scripts','mytheme_admin_scripts');

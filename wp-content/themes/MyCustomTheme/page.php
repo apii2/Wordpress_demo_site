@@ -5,6 +5,8 @@ Template for displaying all the page
 */
 
 get_header();
+get_post_format();
+
 ?>
 
 <div>

@@ -1,29 +1,36 @@
 <?php
 
-function dd($value){
-  echo "<pre>";
-  var_dump($value);
-  echo "</pre>";
-
-  die();
-}
-
+/*
+The main template file
+*/
 
 get_header();
+?>
 
-get_search_form();
+<div>
+  <main>
+    <?php 
+      if(have_posts()):
+        while(have_posts()):
+          the_post();
+          get_template_part("templates-parts/post/content");
+        endwhile;
 
-if(have_posts()):
-  while(have_posts()):
-    the_post();
-    get_template_part("templates-parts/post/content");
-  endwhile;
+        //Pagination of pages containing limited posts
+        echo paginate_links( [
+          'prev-text' => esc_html__('Prev','mytheme'),
+          'next-text' => esc_html__('Next','mytheme')
+        ] );
 
-  //Pagination of pages containing limited posts
-  echo paginate_links( [
-    'prev-text' => esc_html__('Prev','mytheme'),
-    'next-text' => esc_html__('Next','mytheme')
-  ] );
-endif;
+      else:
+        get_template_part('templates-parts/page/content','none');
+      endif;
+    ?>
+  </main>
 
+  <?php get_sidebar(); ?> 
+  
+</div>
+
+<?php
 get_footer();

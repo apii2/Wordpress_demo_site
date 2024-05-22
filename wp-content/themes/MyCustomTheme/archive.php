@@ -5,6 +5,7 @@ Template for displaying archive page
 */
 
 get_header();
+get_post_format();
 ?>
 
 <div>
@@ -33,6 +34,9 @@ get_header();
       endif;
     ?>
   </main>
+
+  <?php get_sidebar(); ?> 
+
 </div>
 
 <?php
