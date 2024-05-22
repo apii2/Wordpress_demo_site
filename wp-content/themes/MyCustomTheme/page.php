@@ -5,8 +5,6 @@ Template for displaying all the page
 */
 
 get_header();
-get_post_format();
-
 ?>
 
 <div>
@@ -22,7 +20,6 @@ get_post_format();
 
     ?>
   </main>
-  <?php get_sidebar(); ?>
 </div>
 
 <?php

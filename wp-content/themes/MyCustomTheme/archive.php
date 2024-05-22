@@ -5,7 +5,6 @@ Template for displaying archive page
 */
 
 get_header();
-get_post_format();
 ?>
 
 <div>
@@ -20,7 +19,7 @@ get_post_format();
         //Display posts
         while(have_posts()):
           the_post();
-          get_template_part("templates-parts/post/content");
+          get_template_part("templates-parts/post/content", get_post_format());
         endwhile;
         
         //Pagination of pages containing limited posts
