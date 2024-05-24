@@ -239,15 +239,19 @@ section {
   font-weight: 500;
 }
 
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
-  font-size: 16px;
-  color: var(--color-white);
+.header_menu_action li{
+  list-style-type: none;
   background: var(--color-primary);
   padding: 8px 23px;
   border-radius: 4px;
   transition: 0.3s;
+  font-size: 16px;
+}
+
+.header_menu_action li a{
+  text-decoration: none;
   font-family: var(--font-secondary);
+  color: var(--color-white);
 }
 
 .header .btn-getstarted:hover,

@@ -78,8 +78,12 @@ if(! function_exists('mytheme_setup')):
 
     //This theme uses wp_nav_menu() in one location.
     register_nav_menus([
-      'primary' => esc_html__('Primary','mytheme')
+      'primary' => esc_html__('Primary','mytheme'),
+      'footer' => esc_html__('Footer','mytheme'),
+      'header-action' => esc_html__('Header Action','mytheme')
     ]);
+
+    add_filter('show_admin_bar','__return_false');
   }
 endif;
 add_action('after_setup_theme','mytheme_setup');
