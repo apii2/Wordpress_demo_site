@@ -2460,6 +2460,11 @@ section {
   overflow: hidden;
 }
 
+.blog .posts-list .post-img img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .blog .posts-list .title {
   font-size: 24px;
   font-weight: 700;

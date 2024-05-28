@@ -34,44 +34,34 @@ get_header();
           <div class="col-lg-8">
 
             <div class="row gy-4 posts-list">
-
+              <?php 
+              if(have_posts()):
+                while(have_posts()):
+                  the_post();
+                  get_template_part("templates-parts/post/content", get_post_format());
+                endwhile;
                 
-                <?php 
-                  if(have_posts()):
-                    while(have_posts()):
-                      the_post();
-
-                      // echo '<div class="col-lg-6">';
-                      // echo '<article class="d-flex flex-column">';
-
-                      get_template_part("templates-parts/post/content", get_post_format());
-
-                      // echo '</article>';
-                      // echo '</div>';
-                    endwhile;
-
-                    //Pagination of pages containing limited posts
-                    echo paginate_links( [
-                      'prev-text' => esc_html__('Prev','mytheme'),
-                      'next-text' => esc_html__('Next','mytheme')
-                    ] );
-
-                  else:
-                    get_template_part('templates-parts/page/content','none');
-                  endif;
-                ?>
-                
-              
+                //Pagination of pages containing limited posts
+                //TODO: Add css to the page links
+                echo "<div class='blog-pagination'>";
+                echo paginate_links( [
+                  'prev-text' => esc_html__('Prev','mytheme'),
+                  'next-text' => esc_html__('Next','mytheme')
+                ] );
+                echo "</div>";
+                  
+              else:
+                get_template_part('templates-parts/page/content','none');
+              endif;
+              ?>
             </div>
           </div>
+          <!-- Sidebar -->
+          <?php get_sidebar(); ?> 
         </div>
       </div>
     </section>
   </main>
-
-  <!-- Sidebar -->
-  <?php get_sidebar(); ?> 
-  
 </div>
 
 <?php
