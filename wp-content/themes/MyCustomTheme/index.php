@@ -55,6 +55,7 @@ get_header();
               endif;
               ?>
             </div>
+            
           </div>
           <!-- Sidebar -->
           <?php get_sidebar(); ?> 
