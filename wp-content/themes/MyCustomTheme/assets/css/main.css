@@ -245,7 +245,7 @@ section {
   padding: 8px 23px;
   border-radius: 4px;
   transition: 0.3s;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .header_menu_action li a{
@@ -300,7 +300,7 @@ section {
     justify-content: space-between;
     padding: 14px 20px;
     font-family: var(--font-secondary);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     color: rgba(var(--color-secondary-dark-rgb), 0.7);
     white-space: nowrap;
@@ -562,30 +562,32 @@ section {
 --------------------------------------------------------------*/
 .hero-animated {
   width: 100%;
-  min-height: 50vh;
+  min-height: 100vh;
   background: url("../img/hero-bg.png") center center;
   background-size: cover;
   position: relative;
   padding: 120px 0 60px;
+  /* background-image: url('../../../../uploads/2024/05/bg.avif'); */
 }
 
 .hero-animated h2 {
-  margin: 0 0 10px 0;
-  font-size: 48px;
+  margin: 0 0 25px 0;
+  font-size: 70px;
   font-weight: 300;
   color: var(--color-secondary);
   font-family: var(--font-secondary);
 }
 
-.hero-animated h2 span {
-  color: var(--color-primary);
-}
-
 .hero-animated p {
   color: rgba(var(--color-secondary-rgb), 0.8);
   margin: 0 0 30px 0;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 400;
+  line-height: 30px;
+}
+
+.hero-animated p span {
+  color: var(--color-primary);
 }
 
 .hero-animated .animated {
@@ -611,20 +613,37 @@ section {
   }
 }
 
-.hero-animated .btn-get-started {
-  font-size: 16px;
+.hero-animated .action-btn{
+  margin-top: 42px;
+}
+
+.hero-animated .action-btn a{
+  font-size: 20px;
   font-weight: 400;
   display: inline-block;
-  padding: 10px 28px;
-  border-radius: 4px;
+  padding: 18px 57px;
+  border-radius: 8px;
   transition: 0.5s;
+  font-family: var(--font-secondary);
+}
+
+.hero-animated .btn-get-started {
   color: var(--color-white);
   background: var(--color-primary);
-  font-family: var(--font-secondary);
 }
 
 .hero-animated .btn-get-started:hover {
   background: rgba(var(--color-primary-rgb), 0.8);
+}
+
+.hero-animated .btn-learn-more {
+  border: solid 1px var(--color-secondary-light);
+  margin-left: 20px;
+  color: var(--color-primary);
+}
+
+.hero-animated .btn-learn-more:hover {
+  box-shadow: 1px 3px 9px rgba(var(--color-secondary-light-rgb),0.8);
 }
 
 .hero-animated .btn-watch-video {

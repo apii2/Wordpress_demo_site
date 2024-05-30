@@ -1,7 +1,7 @@
 <?php
 
 /*
-The main template file
+The blog homepage template file
 */
 
 get_header();
